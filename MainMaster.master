@@ -1,0 +1,56 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MainMaster.master.cs" Inherits="MasterPage" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>Client Management</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <link href="Bootstrap file and folders/Content/bootstrap.css" rel="stylesheet" />
+    <link href="Bootstrap file and folders/Content/Site.css" rel="stylesheet" />
+
+    <script src="Bootstrap file and folders/Scripts/modernizr-2.6.2.js" ></script>
+    
+    <script src="Bootstrap file and folders/Scripts/bootstrap.js" ></script>
+    <script src="Bootstrap file and folders/Scripts/jquery-1.10.2.js" ></script>
+
+
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+
+
+        <div class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navabar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+
+                    </button>
+                    <a class="navbar-brand" href="Home.aspx">Client Management</a>
+                </div>
+                <div class="navbar-collapse collapse">
+                    <%=myrole %>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="#" id="registerLink">Welcome <b><%=Session["username"].ToString() %></b></a>
+
+                        </li>
+                        <li><a href="Login.aspx" id="mylink"><b>Logout</b></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+    
+        <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+        
+        </asp:ContentPlaceHolder>
+ 
+    </form>
+</body>
+</html>
